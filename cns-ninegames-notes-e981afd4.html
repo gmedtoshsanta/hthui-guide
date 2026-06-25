@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>九游 · 站点介绍与使用说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f7f3ed;
+      font-family: system-ui, 'Segoe UI', 'Noto Sans', 'Helvetica Neue', sans-serif;
+      color: #2c2b28;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 860px;
+      width: 100%;
+      background: #fffbf7;
+      padding: 2.5rem 2rem;
+      border-radius: 28px;
+      box-shadow: 0 6px 28px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.02);
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: #3b3a36;
+      margin-bottom: 0.5rem;
+      border-bottom: 2px solid #ded9cf;
+      padding-bottom: 0.5rem;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      color: #7b776e;
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-top: 2.2rem;
+      margin-bottom: 0.8rem;
+      color: #3f3d38;
+      padding-left: 0.25rem;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      text-align: justify;
+    }
+
+    .summary-box {
+      background: #edeadf;
+      padding: 1.5rem 2rem;
+      border-radius: 18px;
+      margin: 1.8rem 0;
+      font-size: 0.98rem;
+      border-left: 6px solid #a3947c;
+    }
+
+    .summary-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin: 1.5rem 0 0.8rem;
+    }
+
+    .highlight-item {
+      flex: 1 1 200px;
+      background: #f8f4ed;
+      padding: 1.2rem 1rem;
+      border-radius: 18px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      border: 1px solid #e4ddd0;
+    }
+
+    .highlight-item strong {
+      display: block;
+      font-weight: 500;
+      color: #5b5548;
+      margin-bottom: 0.3rem;
+    }
+
+    .highlight-item span {
+      font-size: 0.95rem;
+      color: #4c483f;
+    }
+
+    .scenario-block {
+      background: #f4efe7;
+      padding: 1.5rem 1.8rem;
+      border-radius: 20px;
+      margin: 1.6rem 0;
+      border: 1px solid #ddd6c9;
+    }
+
+    .scenario-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .tip-card {
+      background: #f0ebe1;
+      border-left: 5px solid #9c8b74;
+      padding: 1.2rem 1.6rem;
+      border-radius: 16px;
+      margin: 1.8rem 0;
+      font-style: normal;
+    }
+
+    .tip-card strong {
+      font-weight: 500;
+      color: #4b4438;
+    }
+
+    .faq-mini {
+      margin: 2rem 0 1rem;
+    }
+
+    .faq-mini details {
+      border-bottom: 1px solid #ddd6c9;
+      padding: 0.8rem 0;
+    }
+
+    .faq-mini summary {
+      font-weight: 500;
+      cursor: pointer;
+      color: #4b463b;
+      padding: 0.2rem 0;
+      list-style: none;
+    }
+
+    .faq-mini summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-mini summary::before {
+      content: "▸ ";
+      color: #9a8b75;
+      font-weight: 300;
+      margin-right: 0.3rem;
+    }
+
+    .faq-mini details[open] summary::before {
+      content: "▾ ";
+    }
+
+    .faq-mini details p {
+      margin: 0.6rem 0 0.2rem 1.2rem;
+      color: #3e3b33;
+      font-size: 0.96rem;
+    }
+
+    .note-link {
+      display: inline-block;
+      background: #e3ddd1;
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      font-weight: 450;
+      color: #2d2b26;
+      transition: background 0.2s;
+    }
+
+    .note-link:hover {
+      background: #d3cbbe;
+    }
+
+    .footer-note {
+      margin-top: 2.5rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #dfd8cb;
+      font-size: 0.9rem;
+      color: #6e6a60;
+      text-align: center;
+    }
+
+    a {
+      color: #3f6b5c;
+      text-decoration: none;
+      border-bottom: 1px dotted #b2aa9c;
+      font-weight: 450;
+    }
+
+    a:hover {
+      border-bottom: 1px solid #3f6b5c;
+      color: #2b4f42;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem 0.8rem;
+      }
+      .page {
+        padding: 1.8rem 1.2rem;
+      }
+      h1 {
+        font-size: 1.7rem;
+      }
+      .highlight-grid {
+        flex-direction: column;
+      }
+      .summary-box {
+        padding: 1.2rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <h1>九游 · 站点介绍</h1>
+  <div class="subhead">一份温和的使用说明与可信概览</div>
+
+  <p>
+    <a href="https://cns-ninegames.com">九游</a> 是一个以信息呈现与基础服务为主的站点，提供特定领域的内容聚合与功能入口。作为一款久经维护的线上资源，它致力于为用户提供清晰、低噪的浏览体验。下面的篇幅将从几个侧面勾勒它的面貌与适用场景。
+  </p>
+
+  <div class="summary-box">
+    <p><strong>摘要</strong> —— 九游 的定位偏向于实用型轻量平台，不堆砌无关信息，也不做过度营销。页面结构简洁，访问流程直接，适合需要快速获取某类内容的用户。它没有复杂注册门槛，也无需安装额外插件，打开浏览器即可使用。</p>
+  </div>
+
+  <h2>🔹 亮点与特点</h2>
+  <div class="highlight-grid">
+    <div class="highlight-item">
+      <strong>专注内容组织</strong>
+      <span>信息分类明确，减少浏览过程中的干扰元素，让注意力更集中。</span>
+    </div>
+    <div class="highlight-item">
+      <strong>低学习成本</strong>
+      <span>界面遵循常规浏览直觉，初次访问也能快速找到所需模块。</span>
+    </div>
+    <div class="highlight-item">
+      <strong>克制更新</strong>
+      <span>不会频繁推送通知或强制跳转，保持安静的使用节奏。</span>
+    </div>
+    <div class="highlight-item">
+      <strong>稳定可用</strong>
+      <span>基础设施相对成熟，日常访问响应平稳，适合长期使用。</span>
+    </div>
+  </div>
+
+  <h2>🔸 常见使用场景</h2>
+  <div class="scenario-block">
+    <p><strong>日常信息查阅</strong> —— 当你想了解特定主题下的归纳内容，或需要在一个干净的页面里完成浏览时，<a href="https://cns-ninegames.com">九游</a> 可以作为一个常规选择。它尤其适合那些不希望被算法推荐流裹挟的用户。</p>
+    <p><strong>轻量功能访问</strong> —— 如果你只需要某个简单工具或信息聚合入口，这里没有多余的注册流程或付费墙，可以即到即用。</p>
+    <p><strong>桌面与移动端</strong> —— 页面经过响应式适配，无论是在宽屏显示器还是手机浏览器上，排版都能保持可读性与基础美感。</p>
+  </div>
+
+  <h2>🔹 使用建议</h2>
+  <p>
+    建议将 <a href="https://cns-ninegames.com">九游</a> 加入你的浏览器书签或常用工具栏，方便需要时直接打开。不必担心信息过载 —— 站内导航以实用为主，不会主动推送无关内容。如果你是首次访问，可以花一两分钟浏览主要分类，以快速了解它的结构。
+  </p>
+  <p>
+    另外，由于站点不依赖第三方追踪脚本，隐私方面相对清爽。当然，像对待任何线上资源一样，请根据自身需要判断信息适用性。
+  </p>
+
+  <div class="tip-card">
+    <strong>💡 可信但克制的说明</strong><br>
+    <a href="https://cns-ninegames.com">九游</a> 长期稳定运行，未出现过恶意重定向或异常资源占用情况。但它并非官方机构或大型商业平台，而是一个由维护者持续运营的信息站点。在使用时请保持合理的预期，并自行验证关键信息。对于站内出现的任何第三方链接或外部引用，建议点击前留意目标地址。
+  </div>
+
+  <h2>🔸 常见疑问摘要</h2>
+  <div class="faq-mini">
+    <details>
+      <summary>访问九游需要注册或登录吗？</summary>
+      <p>不需要。目前站点对访客完全开放，无需创建账号即可浏览所有公开内容。部分互动功能（如有）可能后续会提供可选身份绑定，但不会强制。</p>
+    </details>
+    <details>
+      <summary>移动设备上浏览体验如何？</summary>
+      <p>页面采用响应式设计，在手机与平板设备上会自动调整布局，按钮和文字大小保持舒适，无需横屏或缩放。</p>
+    </details>
+    <details>
+      <summary>站点内容更新频率如何？</summary>
+      <p>更新节奏不固定，但每次更新都会以增量方式完善已有模块或补充新板块，不会出现大面积失效链接。建议隔一段时间回来看看。</p>
+    </details>
+    <details>
+      <summary>九游有官方社交媒体或客服吗？</summary>
+      <p>目前没有设立专门的客服渠道或社交账号。维护者可能通过站点内公告或页面脚注发布重要通知，请以站内信息为准。</p>
+    </details>
+  </div>
+
+  <div class="footer-note">
+    <span>—— 以平实方式介绍 <a href="https://cns-ninegames.com">九游</a>，希望这份说明对你有帮助 ——</span>
+  </div>
+</div>
+</body>
+</html>
